@@ -21,7 +21,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class EmailPassAuth extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
 
 
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(MainActivity.this, "Auth failed",
+                            Toast.makeText(EmailPassAuth.this, "Auth failed",
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
@@ -94,12 +94,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
-                            Intent intent=new Intent(MainActivity.this,MainActivity2.class);
+                            Intent intent=new Intent(EmailPassAuth.this,MainActivity2.class);
                             startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(MainActivity.this, "Неверно введены данные",
+                            Toast.makeText(EmailPassAuth.this, "Неверно введены данные",
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
